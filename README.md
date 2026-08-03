@@ -140,7 +140,7 @@ Create a new circuit named `Logic_Unit` to compute bitwise operations.
 - For the Logical Shift Left operation (`A<<1`), use Logisim's "Splitter" component to break `A` into its individual bits. Use another Splitter to recombine the bits: hardwire a constant `0` to bit 0, route input bit 0 to output bit 1, input bit 1 to output bit 2, and input bit 2 to output bit 3.
 - Place four 4-bit output pins for each of the logic results.
 
-![Logic Unit](screenshots/Logic_Unit.svg)
+![Logic Unit](screenshots/Logic_Unit.png)
 
 ### 3. The Multiplexer Routing Unit
 
