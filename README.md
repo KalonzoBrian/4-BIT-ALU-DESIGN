@@ -81,7 +81,8 @@ The ALU is split into three cooperating sections: Arithmetic, Logic, and Multipl
 - Subtraction: invert B (bitwise NOT) and set Cin = 1 → Sum = A + (~B) + 1 = A − B (two's complement).
 - Optional outputs: carry out (Cout) and overflow flag for signed results.
 
-_Screenshot: ./screenshots/Arithmetic_Unit.png_
+![Arithmetic Unit](screenshots/Arithmetic_Unit.png)
+*Figure: Arithmetic_Unit — subtraction implemented via two's complement (invert B + Cin).* 
 
 ### 2) Logic block
 - Bitwise operations are implemented by four parallel single-bit gates per operation:
@@ -95,14 +96,16 @@ _Screenshot: ./screenshots/Arithmetic_Unit.png_
   - Y3 = A2
   - A3 is discarded (or can be routed to a flag for extended designs)
 
-_Screenshot: ./screenshots/Logic_Unit.png_
+![Logic Unit](screenshots/Logic_Unit.png)
+*Figure: Logic_Unit — parallel bitwise AND/OR/XOR and logical shift-left of A.*
 
 ### 3) Multiplexer routing block
 - Four 8-to-1 multiplexers (one for each result bit Y3..Y0).
 - S[2:0] is connected to the select lines of all multiplexers.
 - The inputs to each MUX are the corresponding bits from the Arithmetic block, Logic block outputs, the shift result, and bypass outputs (A, B), arranged to match the selection table above.
 
-_Screenshot: ./screenshots/Routing_Unit.png_
+![Routing Unit](screenshots/Routing_Unit.png)
+*Figure: Routing_Unit — collects operation outputs and selects the final 4-bit ALU result based on S[2:0].*
 
 ---
 
@@ -125,7 +128,7 @@ Create a new circuit named `Arithmetic_Unit`. This sub-circuit handles addition 
 
 (See screenshot for the implemented Arithmetic unit.)
 
-_Screenshot: ./screenshots/Arithmetic_Unit.png_
+![Arithmetic Unit](screenshots/Arithmetic_Unit.png)
 
 ### 2. The Logic Unit
 
@@ -137,7 +140,7 @@ Create a new circuit named `Logic_Unit` to compute bitwise operations.
 - For the Logical Shift Left operation (`A<<1`), use Logisim's "Splitter" component to break `A` into its individual bits. Use another Splitter to recombine the bits: hardwire a constant `0` to bit 0, route input bit 0 to output bit 1, input bit 1 to output bit 2, and input bit 2 to output bit 3.
 - Place four 4-bit output pins for each of the logic results.
 
-_Screenshot: ./screenshots/Logic_Unit.png_
+![Logic Unit](screenshots/Logic_Unit.png)
 
 ### 3. The Multiplexer Routing Unit
 
@@ -149,7 +152,7 @@ Create a new circuit named `Routing_Unit`. This routes all results to the final 
 - Wire the eight operational inputs into the MUX data pins matching the mapping table defined in Phase 1 (e.g., pin `000` gets Addition, `010` gets AND).
 - Route the MUX output to a single 4-bit output pin.
 
-_Screenshot: ./screenshots/Routing_Unit.png_
+![Routing Unit](screenshots/Routing_Unit.png)
 
 ### 4. The 7-Segment Decoder
 
@@ -161,7 +164,8 @@ Create a new circuit named `Hex_Decoder`.
 - Alternatively, use Logisim-Evolution's "Combinational Analysis" tool: input the truth table from Phase 1 and let it auto-generate the minimized structural gates.
 - Place seven 1-bit output pins labeled `a` through `g`.
 
-_Screenshot: ./screenshots/Hex_Decoder.png_
+![Hex Decoder](screenshots/Hex_Decoder.png)
+*Figure: Hex_Decoder — sum-of-products implementation for segments a..g (or generated via combinational analysis).* 
 
 ### 5. Top-Level Integration
 
@@ -177,7 +181,7 @@ Open the `main` circuit canvas to combine everything into a single top-level cir
 - Place a 7-Segment Display component on the canvas and wire the seven output pins of the `Hex_Decoder` to the corresponding pins on the display component.
 - Use Logisim's "Poke" tool to toggle the inputs and demonstrate that the correct hex digit illuminates for each operation.
 
-_Screenshot: ./screenshots/Top_Level.png_
+![Top Level](screenshots/Top_Level.png)
 
 ---
 
@@ -242,15 +246,13 @@ Recommended steps to verify the design:
 
 ## Screenshots
 
-Included or referenced screenshot files (place them in `screenshots/`):
+Included screenshot references (place images in `screenshots/` so links render on GitHub):
 
 - screenshots/Arithmetic_Unit.png — screenshot of the Arithmetic_Unit circuit in Logisim-Evolution
 - screenshots/Logic_Unit.png — screenshot of the Logic_Unit circuit in Logisim-Evolution
 - screenshots/Routing_Unit.png — screenshot of the Routing_Unit (MUX routing) circuit
 - screenshots/Hex_Decoder.png — screenshot of the Hex_Decoder implementation (logic gates / combinational analysis output)
 - screenshots/Top_Level.png — screenshot of the top-level integrated circuit showing inputs, ALU blocks, MUX, decoder, and 7-segment display
-
-Add or update these images in the repository `screenshots/` folder so the references render in GitHub.
 
 ---
 
