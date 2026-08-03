@@ -81,7 +81,8 @@ The ALU is split into three cooperating sections: Arithmetic, Logic, and Multipl
 - Subtraction: invert B (bitwise NOT) and set Cin = 1 → Sum = A + (~B) + 1 = A − B (two's complement).
 - Optional outputs: carry out (Cout) and overflow flag for signed results.
 
-![Arithmetic Unit](screenshots/Arithmetic_Unit.png)
+![Arithmetic Unit](<img width="1309" height="813" alt="ARITHMETIC UNIT" src="https://github.com/user-attachments/assets/10d0da4b-bfbe-4dd4-8ef5-9d8b4fcc3938" />
+)
 *Figure: Arithmetic_Unit — subtraction implemented via two's complement (invert B + Cin).* 
 
 ### 2) Logic block
