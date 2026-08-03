@@ -251,25 +251,9 @@ Recommended steps to verify the design:
 
 ---
 
-## Screenshots
 
-Included screenshot references (place images in `screenshots/` so links render on GitHub):
 
-- screenshots/Arithmetic_Unit.svg — screenshot of the Arithmetic_Unit circuit in Logisim-Evolution
-- screenshots/Logic_Unit.svg — screenshot of the Logic_Unit circuit in Logisim-Evolution
-- screenshots/Routing_Unit.svg — screenshot of the Routing_Unit (MUX routing) circuit
-- screenshots/Hex_Decoder.svg — screenshot of the Hex_Decoder implementation (logic gates / combinational analysis output)
-- screenshots/Top_Level.svg — screenshot of the top-level integrated circuit showing inputs, ALU blocks, MUX, decoder, and 7-segment display
 
----
-
-## Notes
-
-- Deadline note: The original assignment deadline was midnight on Saturday, July 25th. Today is July 30th; if this is for submission, check with your instructor about late credit policies. This README includes both Phase 1 theory and Phase 2 gate-level implementation guidance for Logisim-Evolution.
-
-- If any screenshot filenames differ from the ones listed above, tell me their exact names and I'll update the README links accordingly.
-
----
 
 ## Future extensions / enhancements
 
@@ -282,11 +266,6 @@ Included screenshot references (place images in `screenshots/` so links render o
 
 ---
 
-## License
-
-Add a license file to the repository (e.g., MIT) if you intend to make this project open-source. If you prefer a different license, include LICENSE.md with the appropriate text.
-
----
 
 ## Author
 
@@ -295,7 +274,3 @@ Author / Owner: KalonzoBrian
 
 ---
 
-If you'd like, I can also:
-- Commit the referenced screenshots into `screenshots/` if you upload them here, or I can create placeholder images for you to replace.
-- Generate a starter Verilog implementation and testbench and commit them under `rtl/` and `tb/`.
-- Produce the full truth table and explicit minimized boolean expressions in a PDF or markdown file ready to commit.
